@@ -62,7 +62,7 @@
                                                 <span class="fas fa-edit" style="margin-left: 3px"></span>
                                             </a>
                                             <a class="d-block" href="{{url("/formation/edit/$formation->id")}}">
-                                                <img style="height: 200px;object-fit: cover" class="card-img-top " height="150" src="{{url("storage/$formation->picture")}}" alt="" />
+                                                <img style="height: 200px;object-fit: cover" class="card-img-top " height="150" src="{{asset("img/generic/$formation->picture")}}" alt="" />
                                             </a>
                                             <span class="badge rounded-pill bg-success position-absolute mt-2 me-2 z-index-2 top-0 end-0">New</span>
                                         </div>

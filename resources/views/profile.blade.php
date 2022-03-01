@@ -10,7 +10,7 @@
 
                             </div>
                             <!--/.bg-holder-->
-                            <form action="/profile/bpicture" method="post" enctype="multipart/form-data">
+                            <form action="{{url("/profile/bpicture")}}" method="post" enctype="multipart/form-data">
                                 @csrf
                                 @method("put")
                                 <input name="picture" id="upload-cover-image" class="d-none" onchange="form.submit()" id="profile-image" type="file" />
@@ -20,7 +20,7 @@
                         </div>
                         <div class="avatar avatar-5xl avatar-profile shadow-sm img-thumbnail rounded-circle">
                             <div class="h-100 w-100 rounded-circle overflow-hidden position-relative"> <img src="@if(Auth::user()->picture == null)../../assets/img/team/avatar.png @else storage/{{Auth::user()->picture}}@endif" width="200" alt="" data-dz-thumbnail="data-dz-thumbnail" />
-                                <form action="/profile/picture" method="post" enctype="multipart/form-data">
+                                <form action="{{url("/profile/picture")}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     @method("put")
                                     <input name="picture" class="d-none" onchange="form.submit()" id="profile-image" type="file" />
@@ -69,7 +69,7 @@
                             <h5 class="mb-0">Change Password</h5>
                         </div>
                         <div class="card-body bg-light">
-                            <form action="/changePassword" method="post">
+                            <form action="{{url("/changePassword")}}" method="post">
                                 @csrf
                                 @method('put')
                                 <div class="mb-3">
