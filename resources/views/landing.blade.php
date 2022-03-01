@@ -14,13 +14,6 @@
                                 <option value="less-expensive">Less expensive</option>
                             </select>
                         </div>
-{{--                        <div class="col ">--}}
-{{--                            <select class="form-select" name="category">--}}
-{{--                                @foreach($categories as $category)--}}
-{{--                                    <option value="{{$category->id}}">{{$category->name}}</option>--}}
-{{--                                @endforeach--}}
-{{--                            </select>--}}
-{{--                        </div>--}}
                         <div class="col">
                             <button class="btn btn-falcon-primary me-1 mb-1" type="submit">
                                 Apply
@@ -35,7 +28,7 @@
                 <div class="mb-4 col-md-6 col-lg-4">
                     <div class="border rounded-3 h-100 d-flex flex-column justify-content-between">
                         <div class="overflow-hidden">
-                            <div class="position-relative rounded-top overflow-hidden"><a class="d-block" href="{{url("/formation/$formation->id")}}"><img style="height: 200px;object-fit: cover" class="card-img-top " height="200" src="{{url("storage/$formation->picture")}}" alt="" /></a><span class="badge rounded-pill bg-success position-absolute mt-2 me-2 z-index-2 top-0 end-0">New</span>
+                            <div class="position-relative rounded-top overflow-hidden"><a class="d-block" href="{{url("/formation/$formation->id")}}"><img style="height: 200px;object-fit: cover" class="card-img-top " height="200" src="{{asset("assets/img/generic/$formation->picture")}}" alt="" /></a><span class="badge rounded-pill bg-success position-absolute mt-2 me-2 z-index-2 top-0 end-0">New</span>
                             </div>
                             <div class="p-3">
                                 <h5 class="fs-0"><a class="text-dark" href="{{url("/formation/$formation->id")}}">{{$formation->name}}</a></h5>
