@@ -7,7 +7,7 @@
             @if(sizeof($formations) > 0)
                 <div class="card col-md-10">
                     <div class="card-body">
-                        <form class="form-inline" method="GET" action="/admin">
+                        <form class="form-inline" method="GET" action="{{url("/admin")}}">
                             <div class="row align-items-center w-50 mb-2">
                                 <div class="row w-75">
                                     <div class="col">

@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-3 h1 align-content-center"  >
                 <div class="card">
-                    <form method="post" action="/category/add">
+                    <form method="post" action="{{url("/category/add")}}">
                         @csrf
                         <div class="card-header bg-light">
                             <h5 class="mb-0">New Category</h5>
@@ -43,7 +43,7 @@
                                                     <span class="fas fa-edit"></span>
                                                 </a>
                                             </div>
-                                            <form class="" id="form_delete{{$category->id}}" method="post" action="/category/delete/{{$category->id}}">
+                                            <form class="" id="form_delete{{$category->id}}" method="post" action="{{url("/category/delete/$category->id")}}">
                                                 @csrf
                                                 @method('delete')
                                                 <a class="btn btn-sm btn-falcon-default" onclick="document.getElementById('form_delete{{$category->id}}').submit();" title="Acces to your page">
@@ -59,7 +59,7 @@
                                             <div class="position-absolute top-0 end-0 mt-2 me-2 z-index-1">
                                                 <button class="btn-close btn btn-sm btn-circle d-flex flex-center transition-base" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
-                                            <form action="/category/modify/{{$category->id}}" method="POST">
+                                            <form action="{{url("/category/modify/$category->id")}}" method="POST">
                                                 @csrf
                                                 @method('put')
                                                 <div class="modal-body p-0">
@@ -118,7 +118,7 @@
                                                     <div class="position-absolute top-0 end-0 mt-2 me-2 z-index-1">
                                                         <button class="btn-close btn btn-sm btn-circle d-flex flex-center transition-base" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
-                                                    <form action="refuse/{{$request->token}}" method="POST">
+                                                    <form action="{{url("refuse/$request->token")}}" method="POST">
                                                         @csrf
                                                         @method('put')
                                                         <div class="modal-body p-0">
@@ -192,7 +192,7 @@
                                                 <div class="position-absolute top-0 end-0 mt-2 me-2 z-index-1">
                                                     <button class="btn-close btn btn-sm btn-circle d-flex flex-center transition-base" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
-                                                <form action="/profile/modify/{{$user->id}}" method="POST">
+                                                <form action="{{url("/profile/modify/$user->id")}}" method="POST">
                                                     @csrf
                                                     @method('put')
                                                     <div class="modal-body p-0">

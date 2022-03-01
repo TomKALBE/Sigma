@@ -2,7 +2,7 @@
 @section('content')
     <div class="card mb-3 m-3">
         <div class="card-body">
-            <form class="form-inline" method="GET" action="/">
+            <form class="form-inline" method="GET" action="{{url("/")}}">
                 <div class="row align-items-center w-50 mb-2">
                     <div class="row w-100">
                         <div class="col">

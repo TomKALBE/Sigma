@@ -290,14 +290,14 @@
                                 </div>
                                 <div class="col d-flex justify-content-end">
                                     <div style="margin-right: 10px">
-                                        <a class="btn btn-sm btn-falcon-default" onclick="changeStep(${item.id})" type="button" data-bs-toggle="modal" data-bs-target="#modal_step${item.id}" title="Acces to your page">
+                                        <a class="btn btn-sm btn-falcon-default" onclick="changeStep(${item.id})" type="button" data-bs-toggle="modal" data-bs-target="#modal_step${item.id}" title="Edit Step">
                                             <span class="fas fa-edit"></span>
                                         </a>
                                     </div>
-                                    <form class="" id="form_delete${item.id}" method="post" action="${url + item.id}">
-                                            @csrf
-                                    @method('delete')
-                                    <a class="btn btn-sm btn-falcon-default" onclick="document.getElementById('form_delete${item.id}').submit();" title="Acces to your page">
+                                    <form class="" id="form_delete${item.id}" method="post" action="${url + "/" + item.id}">
+                                        @csrf
+                                        @method('delete')
+                                        <a class="btn btn-sm btn-falcon-default" onclick="document.getElementById('form_delete${item.id}').submit();" title="Delete Step">
                                             <span class="far fa-trash-alt"></span>
                                         </a>
                                     </form>
@@ -310,7 +310,7 @@
                                     <div class="position-absolute top-0 end-0 mt-2 me-2 z-index-1">
                                         <button class="btn-close btn btn-sm btn-circle d-flex flex-center transition-base" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-                                    <form action="${url_modif + item.id}" method="POST">
+                                    <form action="${url_modif + "/" + item.id}" method="POST">
                                         @csrf
                                         @method('put')
                                         <div class="modal-body p-0">

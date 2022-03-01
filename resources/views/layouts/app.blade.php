@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'Sigma') }}</title>
 
     <!-- Scripts -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -21,7 +21,7 @@
 <div id="app">
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="/">
+            <a class="navbar-brand" href="{{url("/")}}">
                 Sigma
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -51,7 +51,7 @@
                         @endif
                     @else
                         <li class="nav-item">
-                            <a class="nav-link" href="/home">My courses</a>
+                            <a class="nav-link" href="{{url("/home")}}">My courses</a>
                         </li>
                         @if(Auth::user()->role == 'admin')
                             <li class="nav-item">
@@ -59,8 +59,8 @@
                             <div class="dropdown font-sans-serif d-inline-block mb-2">
                                 <a class="nav-link dropdown-toggle" id="dropdownMenuButton" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
                                 <div class="dropdown-menu dropdown-menu-end py-0" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item" href="/admin">Courses</a>
-                                    <a class="dropdown-item" href="/manage">Manage</a>
+                                    <a class="dropdown-item" href="{{url('/admin')}}">Courses</a>
+                                    <a class="dropdown-item" href="{{url('/manage')}}">Manage</a>
 
                                 </div>
                             </div>

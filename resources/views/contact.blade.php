@@ -31,7 +31,7 @@
                                         </div>
                                         <div class="row justify-content-center">
                                             <div class="col-sm-8 col-md">
-                                                <form class="mb-3" action="/contact/send" method="post">
+                                                <form class="mb-3" action="{{url("/contact/send")}}" method="post">
                                                     @csrf
                                                     <input required class="form-control @error('email') is-invalid @enderror" name="email" type="email" placeholder="Email address" />
                                                     @error('email')<label class="invalid-feedback">Email already used !</label>@enderror
