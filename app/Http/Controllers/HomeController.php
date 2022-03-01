@@ -13,16 +13,6 @@ use Illuminate\Support\Facades\Storage;
 class HomeController extends Controller
 {
     public function index(Request $request){
-//        $annonces = Annonce::when($request->term, function ($query, $term) {
-//            return $query->where('title', 'like', "%{$term}%");
-//        })->when($request->categorie, function ($query, $categorie) {
-//            return $query->where('categorie', 'like', "%{$categorie}%");
-//        })->when($request->price && in_array($request->price, ['more-expensive', 'less-expensive']), function ($query) use ($request) {
-//            return $query->orderBy('price', $request->price == 'less-expensive' ? 'asc' : 'desc');
-//        }, function ($query) {
-//            return $query->orderByDesc('id');
-//        })->paginate(15);
-
         $formations = Formation::when($request->term, function ($query, $term) {
             return $query->where('name', 'like', "%{$term}%");
         })->when($request->price && in_array($request->price, ['more-expensive', 'less-expensive']), function ($query) use ($request) {

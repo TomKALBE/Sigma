@@ -24,7 +24,7 @@
             </form>
             <div class="row">
 
-            @foreach($formations as $formation)
+            @forelse($formations as $formation)
                 <div class="mb-4 col-md-6 col-lg-4">
                     <div class="border rounded-3 h-100 d-flex flex-column justify-content-between">
                         <div class="overflow-hidden">
@@ -49,7 +49,11 @@
                         </div>
                     </div>
                 </div>
-            @endforeach
+                @empty
+                    <div style="margin-top: 1em">
+                        <p>Aucun résultat n'a été trouvé</p>
+                    </div>
+            @endforelse
             </div>
         </div>
         @if($formations->items() > 9)
