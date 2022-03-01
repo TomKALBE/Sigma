@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <script src='/assets/js/tinymce/tinymce.min.js'></script>
+    <script src='{{url("/assets/js/tinymce/tinymce.min.js")}}'></script>
     <script>
         tinymce.init({
             selector: 'textarea#tiny',
@@ -278,6 +278,8 @@
                     div.innerHTML = "";
 
                     const url = '{{url("/step/delete/")}}'
+                    const url_modif = '{{url("/step/modify/")}}'
+
                     json.map(item=>{
                         div.innerHTML += `
                         <div id="stepDiv${item.id}" class="card kanban-item shadow-sm dark__bg-1100 steps" style="margin:0.5em;">
@@ -308,7 +310,7 @@
                                     <div class="position-absolute top-0 end-0 mt-2 me-2 z-index-1">
                                         <button class="btn-close btn btn-sm btn-circle d-flex flex-center transition-base" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
-                                    <form action="/step/modify/${item.id}" method="POST">
+                                    <form action="${url_modif + item.id}" method="POST">
                                         @csrf
                                         @method('put')
                                         <div class="modal-body p-0">
