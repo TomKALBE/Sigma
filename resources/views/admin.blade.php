@@ -45,7 +45,7 @@
                                             <div class="p-3">
                                                 <div class="row">
                                                     <div class="col-6">
-                                                        <h5 class="fs-0"><a class="text-dark" href="/formation/edit/{{$formation->id}}">{{$formation->name}}</a></h5>
+                                                        <h5 class="fs-0"><a class="text-dark" href="{{url("/formation/edit/$formation->id")}}">{{$formation->name}}</a></h5>
                                                         <p class="fs--1 mb-3">
                                                             @foreach($formation->categories as $category)
                                                                 @if ($loop->last)
@@ -70,7 +70,7 @@
                                                         </p>
                                                     </div>
                                                     <div class="col-2">
-                                                        <a class="btn btn-sm btn-falcon-default me-2 float-end " href="/formation/{{$formation->id}}" data-bs-toggle="tooltip" data-bs-placement="top" title="Acces to your page">
+                                                        <a class="btn btn-sm btn-falcon-default me-2 float-end " href="{{url("/formation/$formation->id")}}" data-bs-toggle="tooltip" data-bs-placement="top" title="Acces to your page">
                                                             <span class="far fa-eye"></span>
                                                         </a>
                                                     </div>

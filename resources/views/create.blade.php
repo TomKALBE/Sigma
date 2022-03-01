@@ -81,7 +81,7 @@
         </div>
             <div class="col-md-3 h1 align-content-center"  >
                 <div class="card">
-                    <form method="post" action="/chapter/add/{{$formation->id}}">
+                    <form method="post" action="{{url("/chapter/add/$formation->id")}}">
                         @csrf
                         <div class="card-header bg-light">
                             <h5 class="mb-0">New Chapter</h5>
@@ -121,7 +121,7 @@
                                                         <span class="fas fa-edit"></span>
                                                     </a>
                                                 </div>
-                                                <form class="" id="form_delete{{$chapter->id}}" method="post" action="/chapter/delete/{{$chapter->id}}">
+                                                <form class="" id="form_delete{{$chapter->id}}" method="post" action="{{url("/chapter/delete/$chapter->id")}}">
                                                     @csrf
                                                     @method('delete')
                                                     <a class="btn btn-sm btn-falcon-default" onclick="document.getElementById('form_delete{{$chapter->id}}').submit();" title="Acces to your page">
@@ -131,13 +131,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div onload="console.log('chargé')" class="modal fade" id="modal{{$chapter->id}}" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal fade" id="modal{{$chapter->id}}" tabindex="-1" role="dialog" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 500px">
                                             <div class="modal-content position-relative">
                                                 <div class="position-absolute top-0 end-0 mt-2 me-2 z-index-1">
                                                     <button class="btn-close btn btn-sm btn-circle d-flex flex-center transition-base" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
-                                                <form action="/chapter/modify/{{$chapter->id}}" method="POST">
+                                                <form action="{{url("/chapter/modify/$chapter->id")}}" method="POST">
                                                     @csrf
                                                     @method('put')
                                                     <div class="modal-body p-0">
@@ -177,7 +177,7 @@
                     </div>
                 </div>
                 <div class="card d-none" id="stepeditdiv">
-                    <form method="post" action="/step/add/">
+                    <form method="post" action="{{url("/step/add/")}}">
                         @csrf
                         <div class="card-header bg-light">
                             <h5 class="mb-0">New Sept </h5>
@@ -276,6 +276,8 @@
                     if (div == null)
                         return null
                     div.innerHTML = "";
+
+                    const url = '{{url("/step/delete/")}}'
                     json.map(item=>{
                         div.innerHTML += `
                         <div id="stepDiv${item.id}" class="card kanban-item shadow-sm dark__bg-1100 steps" style="margin:0.5em;">
@@ -290,7 +292,7 @@
                                             <span class="fas fa-edit"></span>
                                         </a>
                                     </div>
-                                    <form class="" id="form_delete${item.id}" method="post" action="/step/delete/${item.id}">
+                                    <form class="" id="form_delete${item.id}" method="post" action="${url + item.id}">
                                             @csrf
                                     @method('delete')
                                     <a class="btn btn-sm btn-falcon-default" onclick="document.getElementById('form_delete${item.id}').submit();" title="Acces to your page">

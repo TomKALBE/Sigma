@@ -15,7 +15,7 @@
                                 <div class="col-md-5 text-center bg-card-gradient">
                                     <div class="position-relative p-4 pt-md-5 pb-md-7 light">
                                         <!--/.bg-holder-->
-                                        <div class="z-index-1 position-relative"><a class="link-light mb-4 font-sans-serif fs-4 d-inline-block fw-bolder" href="../../../index.html">Sigma</a>
+                                        <div class="z-index-1 position-relative"><a class="link-light mb-4 font-sans-serif fs-4 d-inline-block fw-bolder" href="{{url("/")}}">Sigma</a>
                                             <p class="opacity-75 text-white">To become a new active member of Sigma please enter your email and we will contact <you></you></p>
                                         </div>
                                     </div>
