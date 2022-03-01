@@ -171,7 +171,8 @@
                                         <td class="align-middle text-nowrap">
                                             <div class="d-flex align-items-center">
                                                 <div class="avatar avatar-xl">
-                                                    <img class="rounded-circle" src="@if($user->picture == null)../../assets/img/team/avatar.png @else storage/{{$user->picture}}@endif" alt="" />
+                                                    <img class="rounded-circle" src="@if($user->picture == null){{asset("
+                                                         assets/img/team/avatar.png")}}@else {{asset("assets/img/team/$user->picture")}}@endif" alt="" />
                                                 </div>
                                                 <div class="ms-2">{{$user->name}}</div>
                                             </div>

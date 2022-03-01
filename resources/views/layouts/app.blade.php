@@ -18,6 +18,11 @@
     @yield('header')
 </head>
 <body data-bs-spy="scroll" data-bs-target="#terms-sidebar" data-bs-offset="100" tabindex="0">
+<style>
+    .navbar .dropdown-menu::after {
+        content: none;
+    }
+</style>
 <div id="app">
     <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
         <div class="container">
@@ -70,7 +75,7 @@
                                 {{ Auth::user()->name }}
                             </a>
 
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <div class="dropdown-menu dropdown-menu-end py-0" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('profile') }}">Profile
                                 </a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"

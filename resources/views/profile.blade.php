@@ -6,8 +6,8 @@
                 <div class="card mb-3 btn-reveal-trigger">
                     <div class="card-header position-relative min-vh-25 mb-8">
                         <div class="cover-image">
-                            <div class="bg-holder rounded-3 rounded-bottom-0"
-                                 style="background-image:url(@if(Auth::user()->bpicture == null){{asset("assets/img/generic/5.jpg")}} @else storage/{{Auth::user()->bpicture}}@endif)">
+                            <div class="bg-holder rounded-3 rounded-bottom-0" style="background-image:url({{Auth::user()->bpicture == null ? asset('assets/img/generic/5.jpg') : asset("assets/img/generic/".Auth::user()->bpicture)}})">
+
                             </div>
                             <!--/.bg-holder-->
                             <form action="{{url("/profile/bpicture")}}" method="post" enctype="multipart/form-data">
@@ -19,7 +19,7 @@
 
                         </div>
                         <div class="avatar avatar-5xl avatar-profile shadow-sm img-thumbnail rounded-circle">
-                            <div class="h-100 w-100 rounded-circle overflow-hidden position-relative"> <img src="@if(Auth::user()->picture == null){{asset("assets/img/team/avatar.png")}} @else storage/{{Auth::user()->picture}}@endif" width="200" alt="" data-dz-thumbnail="data-dz-thumbnail" />
+                            <div class="h-100 w-100 rounded-circle overflow-hidden position-relative"> <img src="@if(Auth::user()->picture == null){{asset("assets/img/team/avatar.png")}} @else {{asset("assets/img/team/".Auth::user()->picture)}}@endif" width="200" alt="" data-dz-thumbnail="data-dz-thumbnail" />
                                 <form action="{{url("/profile/picture")}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     @method("put")
