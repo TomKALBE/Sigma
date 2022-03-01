@@ -28,8 +28,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [HomeController::class,'index']);
-Route::get('/test', [HomeController::class,'test']);
-Route::get('/formation/{id}', [FormationController::class,'index']);
+Route::get('/formation/{id}', [FormationController::class,'index'])->name('formations');
 
 
 
