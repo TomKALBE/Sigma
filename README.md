@@ -64,7 +64,3 @@ Enfin vous pouvez lancer le serveur avec la commande `php artisan serve`
 - Le mot de passe par défaut des utilisateurs est `password`.
 - Les identidiants administrateur sont : `admin@admin.com` `admin`
 - Si la modification d'image ne fonctionne pas du premier coup supprimer dans le dossier `storage` dans `public/storage` et faire la commande `php artisan storage:link` à la racine du projet
-
-## Serveur
-
-Une version du site est disponible à l'adresse `http://88.142.20.37/`
