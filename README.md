@@ -41,10 +41,10 @@ Enfin vous pouvez lancer le serveur avec la commande `php artisan serve`
 - Il peut modifier les informations de la formation
 - Il peut ajouter du contenu a la formation en cliquant sur l'image de la formation
     - Il peut y ajouter un chapitre (titre)
-    - Il peut modifier l'ordre des chapitres grâce à une fonction de drag and drop
+    - Il peut modifier l'ordre des chapitres grâce à une fonctionnalité de drag and drop
     - Il peut modifier le nom d'un chapitre ou le supprimer
     - Il peut ajouter des étapes (Chapitre,titre,contenu) a ce chapitre avec du contenu avec un éditeur html
-    - Il peut modifier l'ordre des étapes grâce à une fonction de drag and drop
+    - Il peut modifier l'ordre des étapes grâce à une fonctionnalité de drag and drop
     - Il peut modifier une étape ou la supprimer
 -Il peut se déconnecter
 
